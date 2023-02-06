@@ -43,7 +43,21 @@ public class linkedlist {
     public void deleteFromHead(){
     Node tempNode = head;
     head = head.next;
-    System.out.println("I am the deleted node from the list "+tempNode);
+    System.out.println("I am the deleted node from the list Node vallue "+tempNode.val);
+    }
+// print all nodes
+    public void printNodeList(){
+        // method 1
+        Node temp;
+        for(temp=head;temp!=null;temp=temp.next){
+            System.out.println(temp.val);
+        }
+        //method 2
+       /* Node temp = head;
+        while(temp != null){
+            System.out.println(temp.val);
+            temp=temp.next;
+        }*/
     }
 
     public static void main(String args[]){
@@ -53,6 +67,11 @@ public class linkedlist {
         newlist.addToHead(30);
         newlist.addToHead(10);
         newlist.addToHead(15);
+
+        newlist.printNodeList();
+
         newlist.deleteFromHead();
+
+        newlist.printNodeList();
     }
 }
