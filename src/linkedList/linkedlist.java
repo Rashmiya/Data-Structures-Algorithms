@@ -31,7 +31,6 @@ class Node{
 public class linkedlist {
     public Node head;
     public Node tail;
-    int count;
 
 //Add to head method
     public void addToHead(int val){
@@ -58,6 +57,18 @@ public class linkedlist {
         return temp;
     }
 
+// to get linked list length
+public void length(){
+    int count = 0;
+    Node currentNode = this.head;
+
+    while(currentNode !=null){
+        count++;
+        currentNode = currentNode.next;
+    }
+    System.out.println("linkedlist length is : "+count);
+}
+
 // print all nodes
     public void printNodeList(){
         // method 1
@@ -82,11 +93,14 @@ public class linkedlist {
         newlist.addToHead(15);
 
         newlist.printNodeList();
+        newlist.length();
 
         newlist.deleteFromHead();
 
         newlist.printNodeList();
 
         newlist.search(20);
+
+        newlist.length();
     }
 }
