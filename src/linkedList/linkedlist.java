@@ -39,12 +39,25 @@ public class linkedlist {
         newNode.next = head;
         head = newNode;
     }
+
 //Delete from head
     public void deleteFromHead(){
     Node tempNode = head;
     head = head.next;
     System.out.println("I am the deleted node from the list Node vallue "+tempNode.val);
     }
+
+//Search a value from Node linked-list
+    public Node search(int searchElement){
+        Node temp;
+        for(temp=head;temp!=null;temp=temp.next){
+            if(temp.val == searchElement){
+                break;   //for loop eka end wenwa methndi
+            }
+        }
+        return temp;
+    }
+
 // print all nodes
     public void printNodeList(){
         // method 1
@@ -73,5 +86,7 @@ public class linkedlist {
         newlist.deleteFromHead();
 
         newlist.printNodeList();
+
+        newlist.search(20);
     }
 }
