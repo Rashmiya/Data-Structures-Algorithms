@@ -33,13 +33,26 @@ public class linkedlist {
     public Node tail;
     int count;
 
+//Add to head method
     public void addToHead(int val){
         Node newNode = new Node(val);
         newNode.next = head;
         head = newNode;
     }
+//Delete from head
+    public void deleteFromHead(){
+    Node tempNode = head;
+    head = head.next;
+    System.out.println("I am the deleted node from the list "+tempNode);
+    }
+
     public static void main(String args[]){
         linkedlist newlist = new linkedlist();
         newlist.addToHead(40);
+        newlist.addToHead(20);
+        newlist.addToHead(30);
+        newlist.addToHead(10);
+        newlist.addToHead(15);
+        newlist.deleteFromHead();
     }
 }
