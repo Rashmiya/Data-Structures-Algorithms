@@ -32,6 +32,13 @@ public class linkedlist {
     public Node head;
     public Node tail;
 
+//Add to tail
+    public void addToTail(int val){
+        Node newTail = new Node(val);
+        tail.next = newTail;
+        tail = newTail;
+    }
+
 //Add to head method
     public void addToHead(int val){
         Node newNode = new Node(val);
@@ -102,5 +109,6 @@ public void length(){
         newlist.search(20);
 
         newlist.length();
+        newlist.addToTail(55);
     }
 }
